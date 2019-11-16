@@ -1,0 +1,258 @@
+@import "base"
+
+html, body, #wrapper
+	box-sizing: border-box
+	margin: 0
+	min-height: 100%
+	outline: none
+	padding: 0
+	width: 100%
+
+html
+	scroll-behavior: smooth
+
+body
+	background: $off-brand
+	color: #000
+	font-family: $sans-serif
+	font-size: 16px
+	overflow-y: auto
+	transition: $transition-val
+
+::selection
+	background: $highlight
+
+::-moz-selection
+	background: $highlight
+
+::-webkit-scrollbar
+	width: 10px
+
+::-webkit-scrollbar-track
+	background: #000
+
+::-webkit-scrollbar-thumb
+	background: hsla(0, 0%, 100%, .3)
+	border-radius: 5px
+
+::-webkit-scrollbar-thumb:hover
+	background: hsla(0, 0%, 100%, .4)
+	transition: $transition-val
+
+a, a:link, a:hover, a:focus
+	border-bottom: 2px solid transparent
+	transition: $transition-val
+
+a.lite
+	color: inherit
+	text-decoration: underline
+	&:hover
+		color: inherit
+		text-decoration: none
+
+h1, h2, h3, h4, h5, h6
+	font-family: $serif
+	letter-spacing: 2px
+
+// @media( #{$bp-sm})
+// 	p
+// 		word-break: break-word
+
+.btn, .btn:hover, .btn:focus
+	background: $brand
+	border-radius: 0
+	color: #FFF
+	font-size: 1.1rem
+	font-weight: 700
+	letter-spacing: 1px
+	margin: 1rem 0
+	outline: none
+	padding: 1rem 1.5rem
+	text-transform: uppercase
+
+.btn:hover
+	background: $brand-dark
+
+.btn-primary
+	border: 2px solid $brand !important
+	&:hover
+		border: 2px solid $brand-dark !important
+
+.btn-secondary, .btn-secondary:hover
+	border: 2px solid #FFF !important
+
+.btn-white-bg
+	background: none
+	color: $brand
+	border: 2px solid $brand !important
+	&:hover
+		color: #FFF
+		border: 2px solid $off-brand !important
+
+.brand
+	color: $brand !important
+
+.section
+	padding-top: 5rem
+	padding-bottom: 5rem
+	@media( #{$bp-md})
+		padding-top: 10rem
+		padding-bottom: 10rem
+
+// Custom Navbar
+.navbar
+	background: none
+	text-align: center
+	transition: all 0.3s ease	
+	.navbar-toggler
+		border: none
+		outline: none
+		padding: 2rem
+		@media( #{$bp-md})
+			transform: scale(1.5)
+		.navbar-toggler-icon
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='hsl(4, 80%, 100%)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
+
+.navbar-brand
+	color: #FFF
+	border: 2px solid #FFF !important
+	display: inline-block
+	padding: .5rem
+	&:hover
+		color: $off-brand
+		background: $off-dark
+		border: 2px solid $off-brand !important
+
+.nav-link
+	color: $highlight !important
+	font-family: $serif
+	font-size: 1.75rem
+	margin: 0 2rem
+	padding: 1rem
+	letter-spacing: 2px
+	text-align: right
+	transition: $transition-val
+	&:hover
+		color: #FFF !important
+	@media( #{$bp-md})
+		font-size: 4rem
+	@media( #{$bp-lg})
+		font-size: 1.5rem
+		text-transform: uppercase
+		margin: 0 1.2rem 20px
+		padding: 1.5rem 0 !important
+		text-align: center
+		&:hover
+			margin-top: 20px
+			margin-bottom: 0
+			&::before
+				content: " "
+				width: 2px
+				height: 50px
+				background: #FFF
+				display: block
+				margin: -55px 0 5px 50%
+
+.nav-item
+	&.active, &.active:hover
+		.nav-link
+			color: #FFF !important
+			@media( #{$bp-lg})
+				margin-top: 20px
+				margin-bottom: 0
+				&::before
+					content: " "
+					width: 2px
+					height: 50px
+					background: #FFF
+					display: block
+					margin: -55px 0 5px 50%
+
+// reset
+.navbar-expand-xl
+	padding: 0
+
+// 100% height mobile menu
+@media(max-width: 992px)
+	.navbar-collapse
+		&.collapse
+			height: 100vh
+			max-height: none
+			overflow-y: auto
+			transition: $transition-val
+		&.collapsing
+			height: 0 !important
+
+// Main Page
+#Home
+	background: $off-brand
+	// min-height: 100vh
+	padding-top: 11rem
+	padding-bottom: 11rem
+	color: #FFF
+	h1
+		font-size: 5rem
+		line-height: 6rem
+		padding: 2rem 0
+	.img-dp
+		width: 100%
+		background: #FFF
+		border: 20px solid $off-brand
+		outline: 5px solid #FFF
+
+h2
+	font-size: 3rem
+
+.social-icons
+	margin: -37.5px 0 3rem
+	a
+		color: $brand !important
+		text-decoration: none
+		width: 75px
+		height: 75px
+		line-height: 75px
+		background: #FFF
+		font-size: 2rem
+		display: inline-block
+		text-align: center
+		border: 2px solid $brand
+		border-radius: 100%
+		margin-left: 1.5rem
+		&:hover
+			background: $off-dark
+			border: 2px solid $off-dark
+			color: #FFF !important
+
+#Social
+	background: #FFF
+	background-image: linear-gradient(90deg, #FFF 25%, $off-brand 25%, $off-brand 50%, #FFF 50%, #FFF 75%, $off-brand 75%, $off-brand 100%)
+	background-size: 80px
+
+#About, #Work, #Blog
+	background: #FFF
+
+#Blog
+	a
+		color: $off-dark
+		font-weight: 700
+		&:hover
+			background: $off-brand
+
+#End-Game
+	color: #FFF
+	background: $off-dark
+	padding-top: 6rem
+	padding-bottom: 6rem
+
+// Animations
+.fade-in
+	opacity: 0
+	transition: $transition-val .5s
+
+.slide-down
+	margin-top: -100px
+	transition: $transition-val 1s
+
+.slide-up
+	margin-top: 200px
+	transition: $transition-val 1s
