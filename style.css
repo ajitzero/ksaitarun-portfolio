@@ -64,7 +64,7 @@ a.lite:hover {
   display: inline-block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: "Bebas Neue", Helvetica, serif;
   letter-spacing: 2px;
 }
@@ -120,18 +120,18 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 768px) {
   .brand-bl::before {
-    content: " ";
-    width: 75px;
-    height: 5px;
     background: #51bcc8;
+    content: " ";
     display: block;
+    height: 4px;
+    margin: 11px 0 0 -95px;
     position: absolute;
-    margin: 10px 0 0 -95px;
+    width: 75px;
   }
 }
 .section {
-  padding-top: 10rem;
   padding-bottom: 10rem;
+  padding-top: 10rem;
 }
 
 .navbar {
@@ -154,11 +154,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-brand {
-  color: #FFF;
   border: 2px solid #FFF !important;
+  color: #FFF;
   display: inline-block;
-  padding: 0.5rem;
   margin-left: 1.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 .navbar-brand:hover {
   color: #77cbd4;
@@ -170,9 +171,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #d8f0f3 !important;
   font-family: "Bebas Neue", Helvetica, serif;
   font-size: 1.75rem;
+  letter-spacing: 2px;
   margin: 0 2rem;
   padding: 1rem;
-  letter-spacing: 2px;
   text-align: right;
   transition: all 0.3s ease-in-out;
 }
@@ -187,22 +188,22 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 992px) {
   .nav-link {
     font-size: 1.5rem;
-    text-transform: uppercase;
     margin: 0 1.2rem 20px;
     padding: 1.5rem 0 !important;
     text-align: center;
+    text-transform: uppercase;
   }
   .nav-link:hover {
-    margin-top: 20px;
     margin-bottom: 0;
+    margin-top: 20px;
   }
   .nav-link:hover::before {
-    content: " ";
-    width: 2px;
-    height: 50px;
     background: #FFF;
+    content: " ";
     display: block;
+    height: 50px;
     margin: -55px 0 5px 50%;
+    width: 2px;
   }
 }
 
@@ -215,17 +216,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
   }
   .nav-item.active .nav-link::before, .nav-item.active:hover .nav-link::before {
-    content: " ";
-    width: 2px;
-    height: 50px;
     background: #FFF;
+    content: " ";
     display: block;
+    height: 50px;
     margin: -55px 0 5px 50%;
+    width: 2px;
   }
 }
 
 .navbar-expand-xl {
   padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 992px) {
@@ -241,9 +243,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 #Home {
   background: #77cbd4;
-  padding-top: 11rem;
-  padding-bottom: 11rem;
   color: #FFF;
+  padding-bottom: 11rem;
+  padding-top: 11rem;
 }
 #Home h1 {
   font-size: 5rem;
@@ -251,10 +253,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem 0;
 }
 #Home .img-dp {
-  width: 100%;
   background: #FFF;
   border: 20px solid #77cbd4;
   outline: 5px solid #FFF;
+  width: 100%;
 }
 
 h2 {
@@ -265,18 +267,18 @@ h2 {
   margin: -37.5px 0 3rem;
 }
 .social-icons a {
+  background: #FFF;
+  border-radius: 100%;
+  border: 2px solid #51bcc8;
   color: #51bcc8 !important;
-  text-decoration: none;
-  width: 75px;
+  display: inline-block;
+  font-size: 2rem;
   height: 75px;
   line-height: 75px;
-  background: #FFF;
-  font-size: 2rem;
-  display: inline-block;
-  text-align: center;
-  border: 2px solid #51bcc8;
-  border-radius: 100%;
   margin: 0 1rem 1rem 0;
+  text-align: center;
+  text-decoration: none;
+  width: 75px;
 }
 .social-icons a:hover {
   background: #003147;
@@ -304,12 +306,57 @@ h2 {
   background: #FFF;
 }
 
-#Blog a {
-  color: #003147;
-  font-weight: 700;
+.card-list {
+  background: #FFF;
+  border: 4px solid #d8f0f3;
+  box-shadow: 0 10px 0 0 #d8f0f3;
+  display: block;
+  float: left;
+  margin: 1rem 7.5%;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  width: 85%;
 }
-#Blog a:hover {
-  background: #77cbd4;
+@media (min-width: 768px) {
+  .card-list {
+    margin: 1rem 1%;
+    width: 48%;
+  }
+}
+.card-list:hover {
+  border: 4px solid #51bcc8;
+  box-shadow: 0 10px 0 0 #51bcc8;
+}
+.card-list a {
+  color: #003147;
+  text-align: center;
+}
+.card-list a:hover {
+  text-decoration: none;
+  color: #51bcc8;
+}
+
+#Work .card-list {
+  min-height: 200px;
+}
+
+.blog-articles {
+  list-style: none;
+}
+.blog-articles li a {
+  font-size: 1.2rem;
+  color: #003147;
+  border: 4px dashed #d8f0f3;
+  padding: 1.5rem !important;
+  text-align: center;
+  display: block;
+  margin-bottom: 1rem;
+}
+.blog-articles li a:hover {
+  color: #51bcc8;
+  border: 4px dashed #51bcc8;
+  padding: 1.5rem !important;
+  text-decoration: none;
 }
 
 #End-Game {
@@ -326,7 +373,7 @@ h2 {
 
 .slide-down {
   margin-top: -100px;
-  transition: margin-top 0.3s ease-in-out 1s;
+  transition: margin-top 0.3s ease-in-out 1s, color 0.3s ease-in-out 0s;
 }
 
 .slide-up {

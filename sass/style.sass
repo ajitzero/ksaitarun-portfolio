@@ -54,7 +54,7 @@ a.lite
 		border: none
 		display: inline-block
 
-h1, h2, h3, h4, h5, h6
+h1, h2, h3
 	font-family: $serif
 	letter-spacing: 2px
 
@@ -102,17 +102,17 @@ h1, h2, h3, h4, h5, h6
 
 @media( #{$bp-md})
 	.brand-bl::before
-		content: " "
-		width: 75px
-		height: 5px
 		background: $brand
+		content: " "
 		display: block
+		height: 4px
+		margin: 11px 0 0 -95px
 		position: absolute
-		margin: 10px 0 0 -95px
+		width: 75px
 
 .section
-	padding-top: 10rem
 	padding-bottom: 10rem
+	padding-top: 10rem
 
 // Custom Navbar
 .navbar
@@ -129,11 +129,12 @@ h1, h2, h3, h4, h5, h6
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='hsl(4, 80%, 100%)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
 
 .navbar-brand
-	color: #FFF
 	border: 2px solid #FFF !important
+	color: #FFF
 	display: inline-block
-	padding: .5rem
 	margin-left: 1.5rem
+	padding: .5rem
+	transition: $transition-val
 	&:hover
 		color: $off-brand
 		background: $off-dark
@@ -143,9 +144,9 @@ h1, h2, h3, h4, h5, h6
 	color: $highlight !important
 	font-family: $serif
 	font-size: 1.75rem
+	letter-spacing: 2px
 	margin: 0 2rem
 	padding: 1rem
-	letter-spacing: 2px
 	text-align: right
 	transition: $transition-val
 	&:hover
@@ -154,20 +155,20 @@ h1, h2, h3, h4, h5, h6
 		font-size: 4rem
 	@media( #{$bp-lg})
 		font-size: 1.5rem
-		text-transform: uppercase
 		margin: 0 1.2rem 20px
 		padding: 1.5rem 0 !important
 		text-align: center
+		text-transform: uppercase
 		&:hover
-			margin-top: 20px
 			margin-bottom: 0
+			margin-top: 20px
 			&::before
-				content: " "
-				width: 2px
-				height: 50px
 				background: #FFF
+				content: " "
 				display: block
+				height: 50px
 				margin: -55px 0 5px 50%
+				width: 2px
 
 .nav-item
 	&.active, &.active:hover
@@ -177,16 +178,17 @@ h1, h2, h3, h4, h5, h6
 				margin-top: 20px
 				margin-bottom: 0
 				&::before
-					content: " "
-					width: 2px
-					height: 50px
 					background: #FFF
+					content: " "
 					display: block
+					height: 50px
 					margin: -55px 0 5px 50%
+					width: 2px
 
 // reset
 .navbar-expand-xl
 	padding: 0
+	transition: $transition-val
 
 // 100% height mobile menu
 @media(max-width: 992px)
@@ -202,19 +204,18 @@ h1, h2, h3, h4, h5, h6
 // Main Page
 #Home
 	background: $off-brand
-	// min-height: 100vh
-	padding-top: 11rem
-	padding-bottom: 11rem
 	color: #FFF
+	padding-bottom: 11rem
+	padding-top: 11rem
 	h1
 		font-size: 5rem
 		line-height: 6rem
 		padding: 2rem 0
 	.img-dp
-		width: 100%
 		background: #FFF
 		border: 20px solid $off-brand
 		outline: 5px solid #FFF
+		width: 100%
 
 h2
 	font-size: 3rem
@@ -222,18 +223,18 @@ h2
 .social-icons
 	margin: -37.5px 0 3rem
 	a
+		background: #FFF
+		border-radius: 100%
+		border: 2px solid $brand
 		color: $brand !important
-		text-decoration: none
-		width: 75px
+		display: inline-block
+		font-size: 2rem
 		height: 75px
 		line-height: 75px
-		background: #FFF
-		font-size: 2rem
-		display: inline-block
-		text-align: center
-		border: 2px solid $brand
-		border-radius: 100%
 		margin: 0 1rem 1rem 0
+		text-align: center
+		text-decoration: none
+		width: 75px
 		&:hover
 			background: $off-dark
 			border: 2px solid $off-dark
@@ -251,12 +252,48 @@ h2
 #About, #Work, #Blog, #Star
 	background: #FFF
 
-#Blog
+.card-list
+	background: #FFF
+	border: 4px solid $highlight
+	box-shadow: 0 10px 0 0 $highlight
+	display: block
+	float: left
+	margin: 1rem 7.5%
+	padding: 1.5rem
+	transition: $transition-val
+	width: 85%
+	@media( #{$bp-md})
+		margin: 1rem 1%
+		width: 48%
+	&:hover
+		border: 4px solid $brand
+		box-shadow: 0 10px 0 0 $brand
 	a
 		color: $off-dark
-		font-weight: 700
+		text-align: center
 		&:hover
-			background: $off-brand
+			text-decoration: none
+			color: $brand
+
+#Work
+	.card-list
+		min-height: 200px
+
+.blog-articles
+	list-style: none
+	li a
+		font-size: 1.2rem
+		color: $off-dark
+		border: 4px dashed $highlight
+		padding: 1.5rem !important
+		text-align: center
+		display: block
+		margin-bottom: 1rem
+		&:hover
+			color: $brand
+			border: 4px dashed $brand
+			padding: 1.5rem !important
+			text-decoration: none
 
 #End-Game
 	color: #FFF
@@ -271,7 +308,7 @@ h2
 
 .slide-down
 	margin-top: -100px
-	transition: margin-top 0.3s ease-in-out 1s
+	transition: margin-top 0.3s ease-in-out 1s, color 0.3s ease-in-out 0s
 
 .slide-up
 	margin-top: 200px
