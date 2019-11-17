@@ -47,8 +47,12 @@ a.lite
 	color: inherit
 	text-decoration: underline
 	&:hover
-		color: inherit
+		color: $off-dark
 		text-decoration: none
+		background: $brand
+		transform: scale(1.05)
+		border: none
+		display: inline-block
 
 h1, h2, h3, h4, h5, h6
 	font-family: $serif
@@ -67,8 +71,12 @@ h1, h2, h3, h4, h5, h6
 	letter-spacing: 1px
 	margin: 1rem 0
 	outline: none
-	padding: 1rem 1.5rem
+	padding: 1rem 0
+	width: 100%
 	text-transform: uppercase
+	@media( #{$bp-md})
+		padding: 1rem 2.5rem
+		width: auto
 
 .btn:hover
 	background: $brand-dark
@@ -92,18 +100,25 @@ h1, h2, h3, h4, h5, h6
 .brand
 	color: $brand !important
 
+@media( #{$bp-md})
+	.brand-bl::before
+		content: " "
+		width: 75px
+		height: 5px
+		background: $brand
+		display: block
+		position: absolute
+		margin: 10px 0 0 -95px
+
 .section
-	padding-top: 5rem
-	padding-bottom: 5rem
-	@media( #{$bp-md})
-		padding-top: 10rem
-		padding-bottom: 10rem
+	padding-top: 10rem
+	padding-bottom: 10rem
 
 // Custom Navbar
 .navbar
 	background: none
 	text-align: center
-	transition: all 0.3s ease	
+	transition: $transition-val
 	.navbar-toggler
 		border: none
 		outline: none
@@ -118,6 +133,7 @@ h1, h2, h3, h4, h5, h6
 	border: 2px solid #FFF !important
 	display: inline-block
 	padding: .5rem
+	margin-left: 1.5rem
 	&:hover
 		color: $off-brand
 		background: $off-dark
@@ -217,18 +233,22 @@ h2
 		text-align: center
 		border: 2px solid $brand
 		border-radius: 100%
-		margin-left: 1.5rem
+		margin: 0 1rem 1rem 0
 		&:hover
 			background: $off-dark
 			border: 2px solid $off-dark
 			color: #FFF !important
+		@media( #{$bp-lg})
+			margin-left: 1.5rem
+	@media( #{$bp-lg})
+		margin: -37.5px 0 3rem
 
 #Social
 	background: #FFF
 	background-image: linear-gradient(90deg, #FFF 25%, $off-brand 25%, $off-brand 50%, #FFF 50%, #FFF 75%, $off-brand 75%, $off-brand 100%)
 	background-size: 80px
 
-#About, #Work, #Blog
+#About, #Work, #Blog, #Star
 	background: #FFF
 
 #Blog
@@ -251,7 +271,7 @@ h2
 
 .slide-down
 	margin-top: -100px
-	transition: $transition-val 1s
+	transition: margin-top 0.3s ease-in-out 1s
 
 .slide-up
 	margin-top: 200px
